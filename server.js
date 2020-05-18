@@ -32,7 +32,7 @@ app.use(cors());
 // app.use(express.static(__dirname + './public'));
 
 app.get('/' , (req , res) => {
-    res.send(database.users);
+    res.send('it is working');
     
 });
 
