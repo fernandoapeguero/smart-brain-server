@@ -29,9 +29,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-// app.use(express.static(__dirname + './public'));
-
-app.get("/" , (req , res) => { res.json('it is working');});
+app.get('/' , (req , res) => { res.send('it is working');});
 
 app.post('/signin' , signin.handleSignin(db , bcrypt));
 
@@ -44,16 +42,8 @@ app.put('/image' , (req , res) => { image.handleImagePut(req , res ,db)});
 app.post('/imageUrl' , (req , res) => { image.handleApiCall(req , res)});
 
 
-// Load hash from your password DB.
+let port = process.env.PORT;
 
-const port = process.env.PORT;
 app.listen(port || 3000 , () => {
     console.log(`Runing smodly on port ${port}`);
 });
-/*
---> res = this is working
-signin -- Post  = succes/fail 
-register --> Post = user   
-Profile/:userid --> Get = user 
-image --> Put -- user 
-*/ 
