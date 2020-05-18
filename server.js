@@ -31,10 +31,7 @@ app.use(cors());
 
 // app.use(express.static(__dirname + './public'));
 
-app.get("/" , (req , res) => {
-    res.send('it is working');
-    
-});
+app.get("/" , (req , res) => { res.json('it is working');});
 
 app.post('/signin' , signin.handleSignin(db , bcrypt));
 
