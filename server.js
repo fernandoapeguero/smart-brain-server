@@ -31,7 +31,7 @@ app.use(cors());
 
 // app.use(express.static(__dirname + './public'));
 
-app.get('/' , (req , res) => {
+app.get("/" , (req , res) => {
     res.send('it is working');
     
 });
@@ -49,8 +49,9 @@ app.post('/imageUrl' , (req , res) => { image.handleApiCall(req , res)});
 
 // Load hash from your password DB.
 
-app.listen(process.env.PORT || 3000 , () => {
-    console.log(`Runing smodly on port ${process.env.PORT}`);
+const port = process.env.PORT;
+app.listen(port || 3000 , () => {
+    console.log(`Runing smodly on port ${port}`);
 });
 /*
 --> res = this is working
