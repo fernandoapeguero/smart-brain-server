@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
-const knex = require('knex')
+const knex = require('knex');
 const register = require('./controller/register');
 const signin = require('./controller/signin');
 const profile = require('./controller/profile');
@@ -19,7 +19,7 @@ const db = knex({
 const pg = require('knex')({
     client: 'pg',
     connection: process.env.PG_CONNECTION_STRING,
-    searchPath: ['knex', 'public'],
+    searchPath: ['knex', 'public']
 });
 
 const app = express();
